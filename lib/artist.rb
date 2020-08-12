@@ -11,19 +11,24 @@ class Artist
     def self.all 
     @@all
   end
+  
+  def add_song(song)
+    song.artist = self
+    self.songs << song
+  end
  
    def songs
     Song.all.select{|song| song.artist == self}
   end
   
-  def save
+#  def save
     @@all << self
   end
  
-    def add_song(song)
-    song.artist = self
-    self.songs << song
-  end
+ 
+  
+  
+  
   
   def print_songs
     @songs.each{|song| puts "#{song}"}
