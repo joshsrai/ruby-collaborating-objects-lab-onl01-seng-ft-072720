@@ -27,8 +27,8 @@ class Artist
   end
  
  def self.new_by_filename(file)
-   data = file.split("/").last
-   artist = data.split(" - ")[0].strip
+   name = file.split("/").last
+   artist = name.split(" - ")[0].strip
    Artist.find_or_create_by_name(artist)
  end
  
