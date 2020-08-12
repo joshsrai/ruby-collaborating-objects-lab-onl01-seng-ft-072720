@@ -7,12 +7,6 @@ class Song
     @name = name
     @@all << self
   end
-  
-  def self.new_by_filename(filename)
-    song = self.new
-    song.title = filename.split(" - ")[1]
-    song 
-  end
 
   def artist_name(name)
     if (self.artist.nil?)
@@ -22,9 +16,14 @@ class Song
     end
   end
   
-    def self.all
+  def self.all
     @@all
   end
   
+  def self.new_by_filename(filename)
+    song = self.new
+    song.title = filename.split(" - ")[1]
+    song 
+  end
   
 end
